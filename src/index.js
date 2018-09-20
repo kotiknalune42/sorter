@@ -17,6 +17,9 @@ class Sorter {
     return this.array  }
 
   sort(indices) {
+    var indiceArray = new Array(indices);
+    indiceArray.sort(function(a, b) { return a - b; }); // sorting from high to low
+    indices.sort();
     
   }
 
