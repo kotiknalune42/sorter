@@ -17,9 +17,20 @@ class Sorter {
     return this.array  }
 
   sort(indices) {
-    var indiceArray = new Array(indices);
-    indiceArray.sort(function(a, b) { return a - b; }); // sorting from high to low
-    indices.sort();
+    var sortedIndices = [];
+    for (var i = 0; i < indices.length; i++){
+          sortedIndices.push(this.list[indices[i]]);
+      }
+      indices.sort(function (a, b) return a.value - b.value;});
+      sortedIndices.sort(this.compareFunction);
+    
+   /*sort by value  >>> items.sort(function (a, b) return a.value - b.value;}); */
+
+      for(let x = 0; x < indices.length; x++){
+        this.list[indices[x]] = sortedIndices[x];
+      }
+
+      return this.list;
     
   }
 
