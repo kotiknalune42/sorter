@@ -21,7 +21,9 @@ class Sorter {
     for (var i = 0; i < indices.length; i++){
           sortedIndices.push(this.list[indices[i]]);
       }
-      indices.sort(function (a, b) return a.value - b.value;});
+      indices.sort(function (a, b) {
+  return a.value - b.value;
+});
       sortedIndices.sort(this.compareFunction);
     
    /*sort by value  >>> items.sort(function (a, b) return a.value - b.value;}); */
