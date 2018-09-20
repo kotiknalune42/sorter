@@ -4,18 +4,36 @@ class Sorter {
     this.array = x;
   }
 
-  add(element) {this.array.push(element);}
+  add(element) {
+    this.array.push(element);}
 
-  at(index) {return this.array[index];}
+  at(index) {
+    return this.array[index];}
 
-  get length() {return this.array.length;}
+  get length() {
+    return this.array.length;}
 
-  toArray() {return this.array  }
+  toArray() {
+    return this.array  }
 
-  sort(indices) {return this.array.sort(function(a, b){return a - b});}
-
+  sort(indices) {
+    var indiceArray = new Array(indices.length);    
+    
+    for (var i = 0, i < indices.length; i++) {
+       indiceArray.push(this.array[indices[i]]);
+        }; 
+    
+    var comparing = this.compare ? this.compare : ((a,b) => (a - b));
+    indices.sort((a,b) => (a - b)); 
+    indiceArray.sort(comparing);  
+    
+    for (var i = 0, i < indices.length; i++){
+      this.array[indices[i]] = indiceArray[i];
+    }
+  }
+  
   setComparator(compareFunction) {
-
+      this.compare = compareFunction;
   }
 }
 
