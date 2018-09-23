@@ -33,10 +33,7 @@ class Sorter {
   }
 
   setComparator(compareFunction) {
-      compare( a, b )
-         { return a - b; }
-
-      this.compare = compareFunction;
+    this.compare = compareFunction;
   }
 }
 
