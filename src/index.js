@@ -24,7 +24,7 @@ class Sorter {
       indiceArray[i] = this.thingArray[indices[i]];
     }
     indices.sort(function( a, b ){ return a - b; });
-    indiceArray.sort(this.compFunction);    
+    indiceArray.sort(this.compare);    
     for(var i=0; i < indices.length; i++)
     {
       this.thingArray[indices[i]]=indiceArray[i];
